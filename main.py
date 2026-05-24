@@ -1,12 +1,11 @@
 import sys
 
-from config_reader import ConfigReader
+from config_parser import ConfigParser
 
 
 if __name__ == "__main__":
-    config_reader = ConfigReader()
     try:
-        config = config_reader.loads()
+        config = ConfigParser().parse()
     except FileNotFoundError as e:
         print(f"[ERROR]: File not found — {e.filename}")
         sys.exit(1)

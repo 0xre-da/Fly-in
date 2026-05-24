@@ -16,7 +16,7 @@ clean:
 	rm -rf __pycache__ */__pycache__ */*/__pycache__ .mypy_cache dist .ruff_cache
 
 lint:
-	$(RUN) flake8 .
+	$(RUN) flake8 . --exclude .venv
 	$(RUN) mypy . --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
 
 format:
